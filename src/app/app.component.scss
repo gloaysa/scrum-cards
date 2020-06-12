@@ -1,0 +1,108 @@
+$color: #2E3440;
+$phone: 599.99px;
+$tablet: 959.99px;
+$desktop: 1279.99px;
+$desktop-large: 1919.99px;
+
+:host {
+  font-family: 'Nunito', sans-serif;
+}
+
+.app {
+  min-height: calc(100vh - 40px);
+}
+
+.app-card-carousel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__thumbnail {
+    margin: 0.5rem;
+    box-shadow: 0 8px 8px slategrey;
+    cursor: pointer;
+    width: 45%;
+
+    @media (min-width: $phone) {
+      width: 30%;
+    }
+    @media (min-width: $tablet) {
+      width: 20%;
+    }
+
+    &:focus,
+    &:hover {
+      box-shadow: 0 5px 10px slategrey;
+    }
+  }
+}
+
+.app-card-selected {
+  width: 100vw;
+  position: relative;
+
+  @media (min-width: $tablet) {
+    width: 50%;
+  }
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+
+  &__close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    height: 3rem;
+    width: 3rem;
+    font-size: 3rem;
+    cursor: pointer;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 1px -1px 0 1px white, -1px -1px 0 1px white, -1px 1px 0 1px white, 1px 1px 0 1px white, 0 0 0 1px white;
+
+    &:focus,
+    &:hover {
+      animation: border .4s ease 1 forwards;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    box-shadow: 8px 8px 8px slategrey;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  color: #5E81AC;
+  margin-top: 2rem;
+
+  &-heart {
+    color: #BF616A;
+    margin: 0 5px;
+  }
+}
+
+@keyframes border{
+  0% {
+    box-shadow: 1px -1px 0 1px $color, 0 0 0 0 $color, 0 0 0 0 $color, 0 0 0 0 $color, 0 0 0 1px white;
+  }
+  25% {
+    box-shadow: 1px -1px 0 1px $color, -1px -2px 0 1px $color, 0 0 0 0 $color, 0 0 0 0 $color, 0 0 0 1px white;
+  }
+  50% {
+    box-shadow: 1px -1px 0 1px $color, -1px -1px 0 1px $color, -1px 1px 0 1px $color, 0 0 0 0 $color, 0 0 0 1px white;
+  }
+  75% {
+    box-shadow: 1px -1px 0 1px $color, -1px -1px 0 1px $color, -1px 1px 0 1px $color, 1px 1px 0 1px $color, 0 0 0 1px white;
+  }
+  100% {
+    box-shadow: 1px -1px 0 1px $color, -1px -1px 0 1px $color, -1px 1px 0 1px $color, 1px 1px 0 1px $color, 0 0 0 1px white;
+    color: $color;
+  }
+}

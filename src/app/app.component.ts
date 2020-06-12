@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'scrum-cards';
+  selectedCard = -1;
+
+  images = [
+    'ultra-easy',
+    'very-easy',
+    'easy',
+    'normal',
+    'hard',
+    'epic',
+    'unknown'
+  ];
+
+  selectCard(index: number) {
+    this.selectedCard = index;
+  }
 }
