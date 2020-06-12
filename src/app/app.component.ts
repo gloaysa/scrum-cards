@@ -20,5 +20,6 @@ export class AppComponent {
 
   selectCard(index: number) {
     this.selectedCard = index;
+    window.scroll(0, 0);
   }
 }
