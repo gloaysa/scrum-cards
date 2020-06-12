@@ -22,6 +22,9 @@ $desktop-large: 1919.99px;
     box-shadow: 0 8px 8px slategrey;
     cursor: pointer;
     width: 45%;
+    height: auto;
+    object-fit: cover;
+    object-position: left;
 
     @media (min-width: $phone) {
       width: 30%;
